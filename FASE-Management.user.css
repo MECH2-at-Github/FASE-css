@@ -1,0 +1,118 @@
+/* ==UserStyle==
+@name           FASE Case Management
+@namespace      github.com/openstyles/stylus
+@version        2026.10.21
+@description    FASE
+@author         Me
+==/UserStyle== */
+@-moz-document domain("pin.dhs.state.mn.us") {
+    /* Entire page/body */
+    .container-lg {
+        width: min(1170px, 96vw) !important;
+        max-width: min(1170px, 96vw) !important;
+        padding: 0;
+        > div {
+            width: 100%;
+        }
+    }
+    /* Blank lines except for the Save Case Data button */
+    .StandardDivLeftJustified p {
+        margin-block: .1em;
+    }
+    br {
+        display: none;
+    }
+    table {
+        width: 100% !important;
+        tr {
+            box-sizing: border-box;
+            line-height: 20px !important;
+            td {
+                vertical-align: middle !important;
+                &:is([style="height:5px;"], [style="height:10px;"]) {
+                    height: auto !important;
+                }
+                & > select, input {
+                    max-width: 95%;
+                }
+            }
+        }
+        div:has(>fieldset) {
+            border-width: 1.5px;
+        }
+        fieldset {
+            padding: 0 0 .2em 0.4em;
+            legend {
+                font-size: 1.1em;
+                font-weight: 700;
+                font-variant: small-caps;
+            }
+        }
+    }
+    select, input {
+        margin: 4px !important;
+        line-height: 20px !important;
+        padding: 2px 4px !important;
+        border-radius: 3px;
+        &:disabled {
+            border: 1px solid rgba(118, 118, 118, 0.3);
+        }
+    }
+
+    /* Top banner */
+    .LeftNavBackground.m-2.p-2 p {
+        margin-block: .2em;
+        display: flex;
+        align-items: center;
+        &::after {
+            font-size: 12px;
+            margin-inline: auto 0;
+            content: "Stylus 2026.10.21";
+        }
+        img {
+            height: 3em;
+        }
+    }
+    /* Side Menu */
+    .vertical-menuB {
+        br {
+            display: block;
+        }
+        .menu-paragraphB {
+            margin: 0;
+        }
+        a {
+            padding: 0 2px 3px;
+        }
+    }
+    /* Container for the bold bordered boxes */
+    .StandardDiv {
+        margin: 0px;
+    }
+    /* The main content box, and bold bordered boxes */
+    .StandardDivLeftJustified {
+        margin: 5px 0;
+        padding: 5px 0;
+    }
+    .label {
+        text-wrap: balance;
+        line-height: 16px;
+    }
+    [src="https://pin.dhs.state.mn.us/FraudCaseManagement/Images/blank.gif"], [src="../Images/blank.gif"] {
+        display: none;
+    }
+    #_ctl0_lbWhoAmI {
+        display: block;
+        padding-top: 2em;
+    }
+    /* FPI Case page, findings box */
+    #_ctl0_ContentPlaceHolder1_findingsControl_mainTable {
+        tr {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+            & > td {
+                width: unset !important;
+            }
+        }
+    }
+}
