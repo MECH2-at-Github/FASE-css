@@ -1,10 +1,11 @@
 /* ==UserStyle==
-@name           FASE Case Management
+@name           FASE Case Management - no longer updated
 @namespace      github.com/openstyles/stylus
-@version        2026.10.21
+@version        2026.10.27
 @description    FASE
-@author         Me
+@author         MECH2
 ==/UserStyle== */
+/* Before pushing update, update version dates in @version and in the Top banner section */
 @-moz-document domain("pin.dhs.state.mn.us") {
     /* Entire page/body */
     .container-lg {
@@ -58,6 +59,9 @@
             border: 1px solid rgba(118, 118, 118, 0.3);
         }
     }
+    [src="https://pin.dhs.state.mn.us/FraudCaseManagement/Images/blank.gif"], [src="../Images/blank.gif"] {
+        display: none;
+    }
 
     /* Top banner */
     .LeftNavBackground.m-2.p-2 p {
@@ -67,7 +71,7 @@
         &::after {
             font-size: 12px;
             margin-inline: auto 0;
-            content: "Stylus 2026.10.21";
+            content: "Stylus 2026.10.27";
         }
         img {
             height: 3em;
@@ -85,6 +89,10 @@
             padding: 0 2px 3px;
         }
     }
+    #_ctl0_lbWhoAmI {
+        display: block;
+        padding-top: 2em;
+    }
     /* Container for the bold bordered boxes */
     .StandardDiv {
         margin: 0px;
@@ -94,18 +102,12 @@
         margin: 5px 0;
         padding: 5px 0;
     }
-    .label {
-        text-wrap: balance;
-        line-height: 16px;
+/*  Save Button    */
+    td:has(>#_ctl0_ContentPlaceHolder1_clientsListControl_buttonSubmit) {
+        text-align: start;
     }
-    [src="https://pin.dhs.state.mn.us/FraudCaseManagement/Images/blank.gif"], [src="../Images/blank.gif"] {
-        display: none;
-    }
-    #_ctl0_lbWhoAmI {
-        display: block;
-        padding-top: 2em;
-    }
-    /* FPI Case page, findings box */
+
+/*  FPI Case page ======================================================================= */
     #_ctl0_ContentPlaceHolder1_findingsControl_mainTable {
         tr {
             display: grid;
@@ -115,4 +117,9 @@
             }
         }
     }
+    #_ctl0_ContentPlaceHolder1_investigatorControl_mainTable .label {
+        text-wrap: balance;
+        line-height: 16px;
+    }
+
 }
